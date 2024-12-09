@@ -14,7 +14,7 @@ const Navber = () => {
             <LeftSidebar />
 
             {/* Fullscreen Menu */}
-            <FullscreenMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+            <FullscreenMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}   />
 
             {/* Mobile Navbar */}
             <MobileNavbar toggleMenu={toggleMenu} />

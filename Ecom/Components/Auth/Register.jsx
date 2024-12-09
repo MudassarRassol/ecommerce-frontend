@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { MdCameraAlt } from 'react-icons/md';
 
 const Register = () => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -17,12 +18,12 @@ const Register = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-2xl font-bold text-center mb-4">Register</h2>
+    <div className="flex flex-col items-center justify-center  h-full ">
+      <div className="w-full max-w-md  rounded-lg shadow-md p-6">
+        <h2 className="text-2xl  text-center font-extrabold text-white mb-4">Register</h2>
 
-        {/* Profile Photo */}
-        <div className="flex justify-center mb-6">
+        {/* Profile Photo Section */}
+        <div className="flex justify-center mb-6 relative">
           <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-blue-500">
             {profilePhoto ? (
               <img src={profilePhoto} alt="Profile Preview" className="w-full h-full object-cover" />
@@ -32,6 +33,18 @@ const Register = () => {
               </div>
             )}
           </div>
+
+          {/* Choose File Icon */}
+          <label htmlFor="profilePhoto" className="absolute -bottom-4 right-100 bg-blue-500 text-white p-2 rounded-full cursor-pointer shadow-lg">
+            <MdCameraAlt className="text-lg" />
+          </label>
+          <input
+            id="profilePhoto"
+            type="file"
+            accept="image/*"
+            onChange={handleProfilePhotoChange}
+            className="hidden"
+          />
         </div>
 
         {/* Form */}
@@ -85,18 +98,6 @@ const Register = () => {
               <option value="user">User</option>
             </select>
             {errors.role && <p className="text-red-500 text-sm">{errors.role.message}</p>}
-          </div>
-
-          {/* Profile Photo */}
-          <div>
-            <label htmlFor="profilePhoto" className="block text-sm font-medium text-gray-700">Profile Photo</label>
-            <input
-              id="profilePhoto"
-              type="file"
-              accept="image/*"
-              onChange={handleProfilePhotoChange}
-              className="w-full mt-1"
-            />
           </div>
 
           {/* Submit Button */}

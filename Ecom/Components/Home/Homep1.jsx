@@ -6,9 +6,9 @@ const Homep1 = () => {
 
 
   return (
-    <div className='flex flex-col-reverse md:flex-row items-center justify-between  m-2'>
+    <div className='flex flex-col-reverse md:flex-row items-center   m-2'>
     {/* MR SHOP - hidden on small screens */}
-    <div className='hidden md:block text-white font-extrabold text-3xl bg-blue w-[300px] shadow-md p-2 text-center bg-[#0E71CD] rounded-lg'>
+    <div className='hidden md:block w-[40%] text-white font-extrabold text-3xl bg-blue   shadow-md p-2 text-center bg-[#0E71CD] rounded-lg'>
       MR SHOP
     </div>
 
@@ -29,7 +29,7 @@ const Homep1 = () => {
     </marquee>
 
     {/* Search bar - full width on small screens */}
-    <div className='w-full md:w-auto flex items-center bg-white p-2 rounded-2xl'>
+    <div className=' w-[100%]  md:w-fit flex items-center bg-white p-2 rounded-2xl'>
       <input
         type="text"
         className='flex-grow outline-none px-2'
